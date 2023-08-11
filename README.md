@@ -16,3 +16,16 @@ The app shall be based on the following technologies-
 </p>
 
 <h2>The web interface</h2>
+<p>
+  The web-interface for the app is made using streamlit, which is to ensure a light-weight front-end for an already intensive back-end.<br>
+  The app shall be a dual page,simple yet intelligent app that wouldd boast a live cameera-input layered with our ML implementations to ensure functionalities of eye-        
+   tracking,and lip-synch to monitor Q/Ans prcess<br>
+  ![image](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/18cdedf4-4c2b-4a47-b0b8-95281512f473)<br>
+
+
+  As the stream is started, tt shal open up the video stream live from the camera and implement al the ffunctionalities on top of it.<br>
+  Before this happens, the user/admnistrator can also make the camera and audio adjustments as well throughh the "select device" option.<br>
+  ![image](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/ce01aa89-4b59-4cff-a298-0bf035a1ba14)
+
+
+</p>
