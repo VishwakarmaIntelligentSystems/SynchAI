@@ -28,5 +28,14 @@ The app shall be based on the following technologies-
   Before this happens, the user/admnistrator can also make the camera and audio adjustments as well throughh the "select device" option.<br>
   ![image](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/ce01aa89-4b59-4cff-a298-0bf035a1ba14)
 
+It also has been currently equipped witrh a temporary functionality to be able to generate prompts by itself for interviews that can be tweaked and is a broad part of the whole app functionality which includes tracking lip movement according to the prompt generated
+![image](https://github.com/id1ne/id1ne_repo/assets/141939916/a8ae9596-79d7-4e58-9e3f-6252f11080da)
+It uses the OpenAI API for the same
+![image](https://github.com/id1ne/id1ne_repo/assets/141939916/07f31c87-21cb-4533-95d6-44a84f9a9d0d)
+And harnessing the power of LLMs, it is able to generate new prompts/questions everytime!
+![image](https://github.com/id1ne/id1ne_repo/assets/141939916/1ab96139-9fae-49a1-b7f1-bf3b51139d46)
+
+
+
 
 </p>
