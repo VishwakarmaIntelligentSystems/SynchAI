@@ -34,8 +34,20 @@ It uses the OpenAI API for the same
 ![image](https://github.com/id1ne/id1ne_repo/assets/141939916/07f31c87-21cb-4533-95d6-44a84f9a9d0d)
 And harnessing the power of LLMs, it is able to generate new prompts/questions everytime!
 ![image](https://github.com/id1ne/id1ne_repo/assets/141939916/1ab96139-9fae-49a1-b7f1-bf3b51139d46)
+</p>
 
+<h2>The Machine learning</h2><br>
+<h3>Lip-Reading</h3>
+<p>
+SynchAi shall rely on lip-synching to be able to generate speech transcriptions without the use of audio.
+This shall be a custom model built from scratch that shall be trained on videos and their existing transcription alignments - explicitly tracking lip movement.
+Some images from the model training processes-<br>
+![image](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/20192c20-832b-49ca-826a-a3aa001c2d38)<br>
+![image](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/2daa29d0-63e4-4bcb-b88d-4c123aa75f6c)<br>
+![image](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/21fd243c-6f6e-4f5f-a49f-97c5b2a89f9a)<br>
+![image](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/ad14f312-af60-40d8-a746-67e2d633659a)<br>
 
-
+The SynchAI lip-tracking model can select the lip-region and based on the movement and trained transcriptions- can give fairly accurate account of what is being spoken
+(as can be observed by the gradual movement)
 
 </p>
