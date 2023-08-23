@@ -48,6 +48,8 @@ Some images from the model training processes-<br>
 ![image](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/ad14f312-af60-40d8-a746-67e2d633659a)<br>
 
 The SynchAI lip-tracking model can select the lip-region and based on the movement and trained transcriptions- can give fairly accurate account of what is being spoken
-(as can be observed by the gradual movement)
+(as can be observed by the gradual movement)<br>
+
+![animation](https://github.com/VishwakarmaIntelligentSystems/SynchAI/assets/141939916/ddc4fbd7-6eb1-4ad8-8f17-21426ac6e32d)
 
 </p>
