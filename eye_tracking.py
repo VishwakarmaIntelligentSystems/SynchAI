@@ -1,38 +1,34 @@
-import mediapipe as mp
+import av
 import cv2
+import streamlit as st
 
-mp_face = mp.solutions.face_mesh
-mp_drawing = mp.solutions.drawing_utils
-mp_drawing_styles = mp.solutions.drawing_styles
+face_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
+eye_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_eye.xml")
 
-input = cv2.VideoCapture(0)
-while input.isOpened():
-    ret,frame = input.read()
-    img = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
-    annotations = mp_face.FaceMesh(refine_landmarks=True).process(img)
-    img = cv2.cvtColor(img,cv2.COLOR_RGB2BGR)
-    if annotations.multi_face_landmarks:
-        for landmarks in annotations.multi_face_landmarks:
-            mp_drawing.draw_landmarks(
-                image=img,
-                landmark_list=landmarks,
-                connections=mp_face.FACEMESH_NUM_LANDMARKS_WITH_IRISES,
-                landmark_drawing_spec=None,
-                connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_iris_connections_style()
+class VideoProcessor:
+    def __init__(self, output_file):
+        self.output_file = output_file
+        self.output = av.open(self.output_file, 'w')
 
-            )
-            mp_drawing.draw_landmarks(
-                image=img,
-                landmark_list=landmarks,
-                connections=mp_face.FACEMESH_TESSELATION,
-                landmark_drawing_spec=None,
-                connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_tesselation_style()
-            )
-    cv2.imshow('Eye tracking',img)
-    if cv2.waitKey(0) & 0xFF==ord('q'):
-        break
+    def process_frame(self, frame):
+        frm = frame.to_ndarray(format="bgr24")
+        faces = face_cascade.detectMultiScale(cv2.cvtColor(frm, cv2.COLOR_BGR2GRAY), 1.1, 3)
+        eyes = eye_cascade.detectMultiScale(cv2.cvtColor(frm,cv2.COLOR_BGR2GRAY),1.1,3)
+        for (ex, ey, ew, eh) in eyes:
+            cv2.rectangle(frm, (ex, ey), (ex + ew, ey + eh), (255, 5, 26), 2)
+        for x,y,w,h in faces:
+            cv2.rectangle(frm, (x,y), (x+w, y+h), (0,255,0), 3)
 
-input.release()
-cv2.destroyAllWindows()
+        processed_frame = av.VideoFrame.from_ndarray(frm, format='bgr24')
 
+		# Save the processed frame to the output video file
+        self.output.mux(processed_frame)
+
+    def finish_processing(self):
+        # Close the output file
+        self.output.close()
+
+# Instantiating the class and specifying the video file name->
+output_file = 'output.mp4'  # Specify the output video file
+processor = VideoProcessor(output_file)
 
