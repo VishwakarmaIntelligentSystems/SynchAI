@@ -55,3 +55,12 @@ def generate_prompt(prompt):
 
 if st.button('Generate Prompt'):
     generate_prompt(prompt = 'Generate a general interview question for the post of SDE')
+
+
+    model = load_model()
+    yhat = model.predict(tf.expand_dims(video, axis=0))
+    decoder = tf.keras.backend.ctc_decode(yhat, [75], greedy=True)[0][0].numpy()
+    st.text(decoder)
+
+converted_prediction = tf.strings.reduce_join(num_to_char(decoder)).numpy().decode('utf-8')
+st.text(converted_prediction)
