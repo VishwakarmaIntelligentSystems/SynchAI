@@ -3,6 +3,14 @@ from typing import List
 import cv2
 import os 
 
+if not  os.apth.exists(os.path.join('data')):
+    url = 'https://drive.google.com/uc?id=1YlvpDLix3S-U8fd-gqRwPcWXAXm8JwjL'
+    output = 'data.zip'
+    gdown.download(url, output, quiet=False)
+    gdown.extractall('data.zip')
+else:
+    pass
+
 vocab = [x for x in "abcdefghijklmnopqrstuvwxyz'?!123456789 "]
 char_to_num = tf.keras.layers.StringLookup(vocabulary=vocab, oov_token="")
 # Mapping integers back to original characters
