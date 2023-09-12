@@ -2,8 +2,8 @@ import av
 import cv2
 import streamlit as st
 
-face_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
-eye_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_eye.xml")
+face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
 
 class VideoProcessor:
     def __init__(self, output_file):
