@@ -7,7 +7,7 @@ from langchain.llms import OpenAI
 import numpy as np
 import os
 from video_processing import VideoProcessor
-from modelutils import load_model
+from model_utils import load_model
 from gen_utils import load_video
 
 #Basic page configuration
