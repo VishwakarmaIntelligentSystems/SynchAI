@@ -8,7 +8,7 @@ import numpy as np
 import os
 from video_processing import VideoProcessor
 from model_utils import load_model
-from gen_utils import load_video
+from utils import load_video
 
 #Basic page configuration
 st.set_page_config(
