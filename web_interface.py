@@ -43,9 +43,11 @@ while start_recording:
     frame = get_next_frame_from_webrtc_stream(video_streamer)
     if frame is not None:
         processor.process_frame(frame)
+        processor.finish_processing()
 
     if stop_recording:
         processor.process_frame(frame)
+        processor.finish_processing()
         break
 
 # processor.finish_processing()
@@ -58,7 +60,7 @@ if st.button('Generate Prompt'):
 
 
     model = load_model()
-    yhat = model.predict(tf.expand_dims(video, axis=0))
+    yhat = model.predict(tf.expand_dims(output_file, axis=0))
     decoder = tf.keras.backend.ctc_decode(yhat, [75], greedy=True)[0][0].numpy()
     st.text(decoder)
 
